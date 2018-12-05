@@ -6,7 +6,7 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 # VOLUME /tmp
 
-ADD /root/.jenkins/workspace/AutoDeploy/target/AutoDeploy-1.0-SNAPSHOT.jar  app.jar
+ADD target/AutoDeploy-1.0-SNAPSHOT.jar  app.jar
 RUN bash -c 'touch /app.jar'
 
 EXPOSE 8080
