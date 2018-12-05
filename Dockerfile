@@ -4,14 +4,14 @@ FROM openjdk:8
 RUN echo "Asia/shanghai" > /etc/timezone && \
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-VOLUME /tmp
+# VOLUME /tmp
 
-ADD target/AutoDeploy.jar app.jar
+ADD /root/.jenkins/workspace/AutoDeploy/target/AutoDeploy-1.0-SNAPSHOT.jar  app.jar
 RUN bash -c 'touch /app.jar'
 
 EXPOSE 8080
 
-RUN mkdir -p /opt/settings/
+# RUN mkdir -p /opt/settings/
 
-RUN echo "env=DEV" > /opt/settings/server.properties
-ENTRYPOINT ["java","-Xdebug", "-Xrunjdwp:server=y,transport=dt_socket,suspend=n", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+# RUN echo "env=DEV" > /opt/settings/server.properties
+ENTRYPOINT ["java","-jar","/app.jar"]
