@@ -1,5 +1,5 @@
+cn\joes\controller\HelloController.class
 cn\joes\Application.class
 cn\joes\repository\City2Repository.class
-cn\joes\controller\CityRestController.class
-cn\joes\domain\City.class
 cn\joes\repository\CityRepository.class
+cn\joes\domain\City.class
