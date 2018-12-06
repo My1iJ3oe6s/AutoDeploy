@@ -15,7 +15,7 @@ public class HelloController {
 
     @RequestMapping(value = "/demo")
     public String findOneCity(ModelMap map) {
-        return "/index";
+        return "index";
     }
 
 }
